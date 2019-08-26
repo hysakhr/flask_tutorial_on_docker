@@ -4,4 +4,5 @@ ADD . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
 
-CMD python hello.py
+WORKDIR /
+CMD flask run --port 5000 --host 0.0.0.0
