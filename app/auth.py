@@ -43,7 +43,7 @@ def register():
 def login():
     if request.method == 'POST':
         username = request.form['username']
-        password = request.form['password ']
+        password = request.form['password']
         db = get_db()
         error = None
         user = db.execute(
@@ -52,9 +52,9 @@ def login():
         ).fetchone()
 
         if user is None:
-            error = 'Incorrect username.'
+            error = 'Incorrect username or password.'
         elif not check_password_hash(user['password'], password):
-            error = 'Incorrect password.'
+            error = 'Incorrect username or password.'
 
         if error is None:
             session.clear()
