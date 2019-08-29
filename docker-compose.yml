@@ -3,11 +3,11 @@ services:
   flask:
     container_name: flask_tutorial
     build:
-      context: ./app
+      context: ./flaskr
     ports:
       - 9000:5000
     volumes:
-      - ./app:/app 
+      - ./flaskr:/flaskr 
     environment:
-      - FLASK_APP=app
+      - FLASK_APP=flaskr
       - FLASK_ENV=development

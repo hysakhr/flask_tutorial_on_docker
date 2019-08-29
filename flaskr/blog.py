@@ -3,8 +3,8 @@ from flask import (
 )
 from werkzeug.exceptions import abort
 
-from app.auth import login_required
-from app.db import get_db
+from flaskr.auth import login_required
+from flaskr.db import get_db
 
 bp = Blueprint('blog', __name__, )
 
@@ -17,6 +17,7 @@ def index():
         ' FROM post as p JOIN user as u ON p.author_id = p.id'
         ' ORDER BY created DESC'
     ).fetchall()
+    print('blog.index posts : {}'.format(len(posts)))
     return render_template('blog/index.html', posts=posts)
 
 
