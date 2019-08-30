@@ -7,7 +7,7 @@ services:
     ports:
       - 9000:5000
     volumes:
-      - ./flaskr:/flaskr 
+      - ./:/flask_tutorial_on_docker
     environment:
       - FLASK_APP=flaskr
       - FLASK_ENV=development

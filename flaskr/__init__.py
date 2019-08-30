@@ -8,7 +8,7 @@ def create_app(test_config=None):
     app = Flask(
         __name__,
         instance_relative_config=True,
-        instance_path='/flaskr/instance'
+        instance_path='/flask_tutorial_on_docker/flaskr/instance'
     )
     app.config.from_mapping(
         SECRET_KEY='dev',
