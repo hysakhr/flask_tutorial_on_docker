@@ -1,0 +1,13 @@
+version: "3"
+services:
+  flask:
+    container_name: flask_tutorial
+    build:
+      context: ./flaskr
+    ports:
+      - 9000:5000
+    volumes:
+      - ./:/flask_tutorial_on_docker
+    environment:
+      - FLASK_APP=flaskr
+      - FLASK_ENV=development
